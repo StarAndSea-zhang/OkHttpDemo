@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+    ext{
+        // ------- 内网测试PID&安全码 (勿动)-------------------------------
+        // PID
+        PID_INNER_TEST = '"20160426135933567151"'
+        // PID安全码
+        PID_SECRET_INNER_TEST = '"01234567989"'
+
+        // 内网测试地址
+//        URL_INNER_TEST = '"http://192.168.1.115:6776/"'
+        URL_INNER_TEST = '"http://192.168.1.115:27167/"'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
